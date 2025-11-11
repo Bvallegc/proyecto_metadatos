@@ -76,7 +76,7 @@ python src/ingestion/run_ingestion_pipeline.py
 
 ```
 
-## Conversación con el agente
+2. Conversación con el agente
 
 ```bash
 python src/main.py
