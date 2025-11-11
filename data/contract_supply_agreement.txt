@@ -1,0 +1,18 @@
+CONTRACT AGREEMENT
+
+This Service Supply Agreement (“Agreement”) is entered into on February 12, 2024, between TechNova Consulting (“Provider”) and Global Infrastructure Ltd. (“Client”).
+
+1. Scope of Work
+   The Provider shall deliver technical advisory services related to AI-based document automation tools for internal process optimization.
+
+2. Deliverables
+   Weekly progress reports, one final implementation report, and staff training.
+
+3. Duration
+   From February 12, 2024 to July 12, 2024, unless extended by mutual agreement.
+
+4. Confidentiality
+   Both parties agree not to disclose confidential information obtained during the execution of this agreement.
+
+5. Signatures
+   Signed by representatives of both parties on the date indicated above.

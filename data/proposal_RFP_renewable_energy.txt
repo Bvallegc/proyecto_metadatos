@@ -1,0 +1,16 @@
+PROPOSAL – RFP 24-067
+Submitted by: GreenVision Technologies
+
+Subject: Implementation of Predictive Maintenance AI System for Solar Farms
+
+Summary:
+This proposal details the design and deployment of a machine learning-based platform capable of monitoring and predicting equipment failures across distributed solar installations.
+
+Objectives:
+- Integrate IoT sensors for real-time data collection.
+- Use deep learning models for fault detection.
+- Provide an operator dashboard with alerts and analytics.
+
+Timeline: 6 months from project kickoff.
+Budget Estimate: €245,000.
+Contact: Clara Gómez – Project Lead.

@@ -1,0 +1,14 @@
+Subject: Weekly Update – Document Intelligence Pilot
+
+Hi team,
+
+Quick summary of this week’s progress:
+- The OCR module for invoice extraction is now 95% accurate.
+- We’ve started testing the Azure Cognitive Search integration.
+- Metadata schema review scheduled for Tuesday at 10 AM.
+
+Please update your sections in Confluence before Monday EOD.
+
+Best,  
+Luis García
+AI Solutions Architect

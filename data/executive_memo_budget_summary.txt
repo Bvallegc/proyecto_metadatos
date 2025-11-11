@@ -1,0 +1,13 @@
+MEMORANDUM  
+To: Executive Committee  
+From: Financial Strategy Division  
+Date: April 10, 2024  
+Subject: Q1 Budget Utilization and Forecast
+
+Summary:
+Overall expenditure for AI innovation programs reached 78% of the allocated budget by end of Q1. Primary cost drivers include cloud hosting (35%) and model fine-tuning (28%).
+
+Recommendations:
+- Reassess contract with Azure AI Studio for potential reserved-instance pricing.
+- Introduce approval workflow for compute-intensive experiments.
+- Prepare detailed forecast for Q2 with updated project milestones.

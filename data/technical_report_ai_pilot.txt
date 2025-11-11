@@ -1,0 +1,15 @@
+TECHNICAL REPORT – AI Document Intelligence Pilot
+
+Overview:
+The objective of this pilot is to evaluate the performance of a semantic search pipeline based on ChromaDB and LangChain.
+
+System Architecture:
+Documents are ingested through an ETL process, vectorized using OpenAI embeddings, and stored in Chroma for contextual retrieval.
+
+Results:
+- Average retrieval latency: 250ms per query.
+- Metadata accuracy after LLM enrichment: 91%.
+- Average cost per 1K documents processed: $0.38.
+
+Recommendations:
+Further tuning of embedding models and exploration of hybrid retrieval techniques (BM25 + dense embeddings).
