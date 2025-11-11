@@ -1,5 +1,5 @@
 from rich.console import Console
-from prompts.metadata_prompt import METADATA_PROMPT
+from src.prompts.metadata_prompt import METADATA_PROMPT
 
 console = Console()
 

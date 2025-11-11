@@ -1,12 +1,10 @@
 # src/main.py
-from ingestion.loaders import load_docs
-from ingestion.splitters import split_docs
-from ingestion.embeddings import get_embeddings_model
-from ingestion.vector_store import store_in_chroma
-from metadata.generate_matadata import generate_metadata
+from .loaders import load_docs
+from .splitters import split_docs
+from .embeddings import get_embeddings_model
+from .vector_store import store_in_chroma
+from src.metadata.generate_metadata import generate_metadata
 from langchain_groq import ChatGroq
-
-
 
 def run_ingestion_pipeline():
     docs = load_docs()
