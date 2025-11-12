@@ -6,6 +6,8 @@ from pydantic import BaseModel
 from rich.console import Console
 from src.ingestion.run_ingestion_pipeline import run_ingestion_pipeline
 from src.service.rag_service import load_rag_agent, get_chat_response
+from typing import Dict, Any
+import json
 
 dotenv.load_dotenv()
 
@@ -18,9 +20,13 @@ class ChatRequest(BaseModel):
 class ChatResponse(BaseModel):
     response: str
 
+class MetadataResponse(BaseModel):
+    metadata: Dict[str, Any] 
+
 class IngestResponse(BaseModel):
     status: str
     message: str
+    metadata: dict = None
 
 class LoadResponse(BaseModel):
     status: str
@@ -36,15 +42,30 @@ async def ingest_data():
     """
     console.log("🏃‍♂️ Iniciando pipeline de ingesta...")
     try:
-        run_ingestion_pipeline()
+        vectordb, metadata = run_ingestion_pipeline()
         console.log("✅ Ingesta completada.")
         return IngestResponse(
             status="success", 
-            message="Ingesta de datos completada. Llama a /load-agent para recargar el agente."
+            message="Ingesta de datos completada. Llama a /load-agent para recargar el agente.",
         )
     except Exception as e:
         console.log(f"❌ Error durante la ingesta: {e}")
         raise HTTPException(status_code=500, detail=f"Error de ingesta: {e}")
+    
+@app.get("/metadata", response_model=MetadataResponse)
+async def get_metadata():
+    """
+    Endpoint para obtener los metadatos generados durante la ingesta.
+    Ahora solo lee el archivo metadata.json generado.
+    """
+    try:
+        with open("metadata.json", "r") as f:
+            metadata = json.load(f)
+        console.log("✅ Metadatos cargados exitosamente.")
+        return MetadataResponse(metadata={"metadata": metadata})
+    except Exception as e:
+        console.log(f"❌ Error al cargar los metadatos: {e}")
+        raise HTTPException(status_code=500, detail=f"Error al cargar los metadatos: {e}")
 
 @app.post("/load-agent", response_model=LoadResponse)
 async def load_agent_endpoint():

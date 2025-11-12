@@ -50,6 +50,17 @@ def load_agent_and_update_state():
         st.session_state.agent_ready = False
         st.error(f"❌ Falló la carga del agente: {result.get('message', 'Verifica la consola de FastAPI.')}")
 
+def show_metadata():
+    """Llama al endpoint /metadata y muestra los metadatos."""
+    result = call_api("/metadata", "GET")
+    
+    if "metadata" in result:
+        metadata = result["metadata"]
+        st.subheader("Metadatos Generados")
+        st.json(metadata)
+    else:
+        st.error("❌ No se pudieron obtener los metadatos. Revisa los mensajes de error arriba.")
+
 def ingest_data_and_update_state():
     """Llama al endpoint /ingest y actualiza el estado de la aplicación."""
     st.session_state.ingesting = True
@@ -133,6 +144,16 @@ with st.sidebar:
     
     if st.session_state.ingestion_message:
          st.info(st.session_state.ingestion_message)
+
+    st.divider()
+
+    # --- 3. Visualización de Metadatos ---
+    st.subheader("Paso 3: Ver Metadatos")
+    st.write("Muestra los metadatos generados durante la ingesta.")
+    st.button(
+        "Mostrar Metadatos",
+        on_click=show_metadata
+    )
 
 # --- Contenido Principal: Interfaz de Chat ---
 
