@@ -26,11 +26,13 @@ Proyecto_metadatos/
 │  ├─ ingestion/         # Scripts de carga, chunking, embeddings y vector store
 │  ├─ metadata/          # Generación y gestión de metadatos
 │  ├─ prompts/           # Prompts y plantillas para el agente
-│  └─ main.py            
+│  ├─ chatbot.py         # Streamlit app
+│  └─ main.py            # Endpoints de FastAPI
 ├─ .env                  
 ├─ .gitignore           
 ├─ README.md            
 └─ requirements.txt     
+     
 
 ```
 
@@ -47,6 +49,7 @@ cd proyecto_metadatos
 2. Crear entorno virtual:
 
 ```bash
+
 python -m venv venv
 source venv/bin/activate   # Linux/macOS
 venv\Scripts\activate      # Windows
@@ -63,6 +66,7 @@ pip install -r requirements.txt
 4. Crear un archivo .env con variables de entorno:
 
 ```bash
+
 GROQ_API_KEY=tu_api_key
 
 ```
@@ -76,10 +80,17 @@ python src/ingestion/run_ingestion_pipeline.py
 
 ```
 
-2. Conversación con el agente
+2. Iniciar el servidor de FastAPI
 
 ```bash
-python src/main.py
+python uvicorn main:app --reload
+
+```
+
+3. Levantar la app de streamlit en local
+
+```bash
+python streamlit run chatbot.py
 
 ```
 
